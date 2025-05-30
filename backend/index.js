@@ -15,6 +15,13 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/feedback', feedbackRoutes);
 
+app.use('/', (req,res) =>{
+    res.send({
+        activeStatus :true,
+        error:false,
+    })
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
